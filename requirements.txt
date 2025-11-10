@@ -6,3 +6,4 @@ demucs>=4.0.0
 torchcodec==0.8
 Flask>=3.0.0
 reportlab>=4.0.0
+gunicorn>=21.2.0
