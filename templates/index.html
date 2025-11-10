@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Splitting Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40">
+                    <rect x="2" y="8" width="12" height="24" rx="2" fill="#6366f1"/>
+                    <rect x="16" y="4" width="12" height="32" rx="2" fill="#8b5cf6"/>
+                    <rect x="30" y="12" width="8" height="16" rx="2" fill="#a855f7"/>
+                </svg>
+                <h1>Video Splitting Tool</h1>
+            </div>
+            <p class="subtitle">✨ AI-Powered Video Transcription & Segmentation ✨</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <h2>🎬 Process Your Video</h2>
+                <form id="processForm">
+                    <div class="input-group">
+                        <label for="url">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                            </svg>
+                            Video URL
+                        </label>
+                        <input type="text" id="url" placeholder="https://youtube.com/watch?v=..." />
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="submitBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5 3 19 12 5 21 5 3"/>
+                        </svg>
+                        🚀 Start Processing
+                    </button>
+                </form>
+            </div>
+
+            <div class="card progress-card" id="progressCard" style="display: none;">
+                <h3>⚡ Processing Status</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="progress-text" id="progressText">Initializing...</p>
+                <div class="spinner"></div>
+            </div>
+
+            <div class="card results-card" id="resultsCard" style="display: none;">
+                <h3>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    Processing Complete!
+                </h3>
+                <div id="resultsContent"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>🔥 Powered by Blaze Quest 🔥</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+[
+  {
+    "segment_id": 1,
+    "start": "00:01",
+    "end": "01:07",
+    "text": "How to talk about home town? I live in a city called London. This is not London, England. It is a city in Canada. Some of Canada's cities have the same names as English cities. London, Canada has many restaurants and cafes. For entertainment, you can go to the movie theater or art gallery. There is a famous university in London called Western University. It is not close to the ocean or lake, so there are no beaches. It is a multicultural city, so there are churches, temples and mosques. I've been living in London for 10 years. My favorite part of this city is the nature. There are many parks and forests where you can go for walks, runs, or have picnics with friends.",
+    "topic": "Segment 1"
+  },
+  {
+    "segment_id": 2,
+    "start": "01:07",
+    "end": "01:36",
+    "text": "The worst thing about London is that it is far away from other big cities in Canada. You need to drive for almost two hours to get to Toronto or Niagara Falls. This isolation isn't all bad, however. If you drive half an hour outside the city, you can find beautiful, quiet forests. Overall, I enjoy living in London.",
+    "topic": "Segment 2"
+  }
+]

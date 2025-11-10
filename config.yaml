@@ -1,0 +1,19 @@
+paths:
+  downloads: downloads
+  processed: processed
+  audio: processed/audio
+  vocals: processed/vocals
+  clips: processed/clips
+  transcripts: processed/transcripts
+
+transcription:
+  model_size: small
+  compute_type: int8
+
+silence_removal:
+  stop_periods: -1
+  stop_threshold: -50dB
+  detection: peak
+
+segmentation:
+  max_segment_seconds: 60
