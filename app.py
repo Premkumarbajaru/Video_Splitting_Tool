@@ -16,6 +16,14 @@ import threading
 app = Flask(__name__)
 processing_status = {"status": "idle", "progress": 0, "message": ""}
 
+@app.errorhandler(404)
+def not_found(e):
+    return jsonify({"error": "Not found"}), 404
+
+@app.errorhandler(500)
+def internal_error(e):
+    return jsonify({"error": "Internal server error"}), 500
+
 def load_config():
     cfg_path = Path("config.yaml")
     default = {
@@ -138,14 +146,23 @@ def index():
 
 @app.route('/process', methods=['POST'])
 def process():
-    data = request.json
-    url = data.get('url')
-    input_video = data.get('input_video')
-    
-    thread = threading.Thread(target=process_video, args=(url, input_video))
-    thread.start()
-    
-    return jsonify({"status": "started"})
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify({"error": "No data provided"}), 400
+        
+        url = data.get('url')
+        input_video = data.get('input_video')
+        
+        if not url and not input_video:
+            return jsonify({"error": "No URL or video path provided"}), 400
+        
+        thread = threading.Thread(target=process_video, args=(url, input_video))
+        thread.start()
+        
+        return jsonify({"status": "started"})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/status')
 def status():
